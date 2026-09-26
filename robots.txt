@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kriscro99.github.io/fr-detailing/sitemap.xml
