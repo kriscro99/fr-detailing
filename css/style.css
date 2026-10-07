@@ -880,6 +880,10 @@ h1, h2, h3, p, figure { margin: 0; }
     linear-gradient(155deg, rgba(31, 111, 255, .3), rgba(11, 79, 214, .08) 55%, #0a0e15);
   box-shadow: inset 0 0 0 1px rgba(75, 149, 255, .45), 0 30px 60px -32px rgba(31, 111, 255, .65);
 }
+@media (min-width: 681px) {
+  .card-accent { grid-column: span 2; }
+  .card-accent p { max-width: 520px; }
+}
 .card-accent .card-no { -webkit-text-stroke-color: rgba(140, 190, 255, .35); }
 .card-more {
   display: inline-flex;
