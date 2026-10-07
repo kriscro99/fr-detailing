@@ -60,7 +60,7 @@
       navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['o-nama', 'usluge', 'rezultati', 'proces', 'kontakt'].forEach((id) => { const s = document.getElementById(id); if (s) sectionIO.observe(s); });
+  ['o-nama', 'usluge', 'mobilni', 'rezultati', 'proces', 'kontakt'].forEach((id) => { const s = document.getElementById(id); if (s) sectionIO.observe(s); });
 
   /* ---------- Otkrivanje pri skrolanju ---------- */
   const revealEls = $$('[data-reveal]');
@@ -326,6 +326,13 @@
         logo.style.setProperty('--ty', '0deg');
       });
     }
+  }
+
+  /* ---------- Mobilni detailing: SMIL animacija rute ---------- */
+  const route = $('.route');
+  if (route && route.pauseAnimations) {
+    if (reduce) route.pauseAnimations();
+    else new IntersectionObserver(([en]) => (en.isIntersecting ? route.unpauseAnimations() : route.pauseAnimations())).observe(route);
   }
 
   /* ---------- Godina u podnožju ---------- */
